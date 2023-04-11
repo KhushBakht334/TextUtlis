@@ -19,6 +19,16 @@ function TextForm({heading}) {
   const deleteText=()=>{
     setText(" ")
   }
+  const replaceText = () => {
+    let a = prompt("What word do you want to replace?");
+    if (text.includes(a)) {
+      let newWord = prompt(`What do you want to replace ${a} with?`);
+      const newText = text.replace(new RegExp(a, "g"), newWord);
+      setText(newText);
+    } else {
+      alert(`The word ${a} was not found in the text`);
+    }
+  };
   const [text, setText] = useState(` `);
   return (
     <>
@@ -29,7 +39,8 @@ function TextForm({heading}) {
 </div>
 <button className="btn btn-primary mx-3" onClick={handleUpClick}>Convert to Uppercase</button>
 <button className="btn btn-primary" onClick={handleLowClick}>Convert to Lowercase</button>
-<button className="btn btn-danger mx-3" onClick={deleteText}>Delete the text</button>
+<button className="btn btn-danger mx-5" onClick={deleteText}>Delete the text</button>
+<button className="btn btn-danger" onClick={replaceText}>Replace the text</button>
     </div>
     <div className='conatiner my-4'>
       <h1>Your Text Summary</h1>
