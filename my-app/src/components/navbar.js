@@ -23,7 +23,7 @@ function Navbar({title, contact, mode, toggelCheck}) {
         </form> */}
         <div className={`form-check form-switch text-${mode=== `light`? `dark` :`light`}`}>
   <input className="form-check-input" onClick={toggelCheck} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-  <label className="form-check-label" htmlForm="flexSwitchCheckDefault">Enable Dark Mode</label>
+  <label className="form-check-label" htmlform="flexSwitchCheckDefault">Enable Dark Mode</label>
 </div>
       </div>
     </div>
