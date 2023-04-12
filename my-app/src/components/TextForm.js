@@ -59,7 +59,7 @@ function TextForm({heading, mode}) {
   }}>Preview</h2>
     <p style={{
     color: mode === 'light' ? 'black' : 'white'
-  }}>{text}</p>
+  }}>{text.length>0? text:"Enter something to preview"}</p>
     </>
   );
 }
