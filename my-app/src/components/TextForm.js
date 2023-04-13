@@ -1,17 +1,20 @@
 import { useState } from 'react';
+import React from 'react'
 
-
-function TextForm({heading, mode}) {
+function TextForm({heading, mode, showAlert, modes}) {
   console.log('Mode:', mode);
+
   const handleUpClick=()=>{
     // console.log("button is clicked" + text)
     let newText= text.toUpperCase();
     setText(newText);
+    showAlert("Converted to Uppercase", "success")
   }
   const handleLowClick=()=>{
     // console.log("button is clicked" + text)
     let newText= text.toLowerCase();
     setText(newText);
+    showAlert("Converted to Lowercase", "success")
   }
   const handleOnChange=(event)=>{
     // console.log("on Change")
@@ -19,6 +22,7 @@ function TextForm({heading, mode}) {
   }
   const deleteText=()=>{
     setText(" ")
+    showAlert("Text Deleted", "success")
   }
   const replaceText = () => {
     let a = prompt("What word do you want to replace?");
@@ -29,6 +33,7 @@ function TextForm({heading, mode}) {
     } else {
       alert(`The word ${a} was not found in the text`);
     }
+    showAlert("Text is replaced", "success")
   };
   const [text, setText] = useState(` `);
   return (

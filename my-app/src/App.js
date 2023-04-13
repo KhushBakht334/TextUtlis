@@ -7,6 +7,7 @@ import Alert from './components/Alert';
 
 function App() {
   const [mode, setMode]=useState('light');
+  const [modes, setModes]=useState('light');
   const[alert,setAlert]=useState(null)
 
   const showAlert=(message,type)=>{
@@ -14,26 +15,40 @@ function App() {
       message: message,
     type : type
     })
-  }
+    setTimeout(() => {
+      setAlert(null);
+    }, 1000);
+  };
 
  const toggelCheck =()=>{
     if(mode === `light`){
     setMode(`dark`)
     document.body.style.backgroundColor=`black`;
-    showAlert("Dark mode has been enable", "success: ")
+    showAlert(`Dark Mode Has Been Enabled`, `success`)
     }else{
       setMode(`light`)
       document.body.style.backgroundColor=`white`;
-      showAlert("Light mode has been enable", "success: ")
+      showAlert(`Light Mode Has Been Enabled`, `success`)
+    }
+  }
+  const toggelsCheck =()=>{
+    if(modes === `light`){
+    setModes(`#065a6b`)
+    document.body.style.backgroundColor=`#065a6b`;
+    showAlert(`Dark blue Mode Has Been Enabled`, `success`)
+    }else{
+      setModes(`light`)
+      document.body.style.backgroundColor=`white`;
+      showAlert(`Light Mode Has Been Enabled`, `success`)
     }
   }
   return (
    <div className="App">
-    <Navbar title="TextUtils" contact="About" mode={mode} toggelCheck={toggelCheck}/>
+    <Navbar title="TextUtils" contact="About" mode={mode} modes={modes} toggelCheck={toggelCheck} toggelsCheck={toggelsCheck} />
     <Alert alert={alert}/>
 
     <div className="container my-3">
-      <TextForm heading="Enter the text to analyze below" mode={mode} />
+      <TextForm heading="Enter the text to analyze below" mode={mode} showAlert={showAlert}/>
 
       {/* <About/> */}
       </div>
