@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import React from 'react'
 
-function TextForm({heading, mode, showAlert, modes}) {
+function TextForm({heading, mode, showAlert}) {
   console.log('Mode:', mode);
 
   const handleUpClick=()=>{
