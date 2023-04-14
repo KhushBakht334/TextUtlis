@@ -7,7 +7,6 @@ import Alert from './components/Alert';
 
 function App() {
   const [mode, setMode]=useState('light');
-  const [modes, setModes]=useState('light');
   const[alert,setAlert]=useState(null)
 
   const showAlert=(message,type)=>{
@@ -25,26 +24,18 @@ function App() {
     setMode(`dark`)
     document.body.style.backgroundColor=`black`;
     showAlert(`Dark Mode Has Been Enabled`, `success`)
+    document.title=`TextUtils-Dark Mode`;
     }else{
       setMode(`light`)
       document.body.style.backgroundColor=`white`;
       showAlert(`Light Mode Has Been Enabled`, `success`)
+      document.title=`TextUtils-Light Mode`;
     }
   }
-  const toggelsCheck =()=>{
-    if(modes === `light`){
-    setModes(`#065a6b`)
-    document.body.style.backgroundColor=`#065a6b`;
-    showAlert(`Dark blue Mode Has Been Enabled`, `success`)
-    }else{
-      setModes(`light`)
-      document.body.style.backgroundColor=`white`;
-      showAlert(`Light Mode Has Been Enabled`, `success`)
-    }
-  }
+
   return (
    <div className="App">
-    <Navbar title="TextUtils" contact="About" mode={mode} modes={modes} toggelCheck={toggelCheck} toggelsCheck={toggelsCheck} />
+    <Navbar title="TextUtils" contact="About" mode={mode} toggelCheck={toggelCheck} />
     <Alert alert={alert}/>
 
     <div className="container my-3">
