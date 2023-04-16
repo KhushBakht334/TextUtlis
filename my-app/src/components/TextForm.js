@@ -24,6 +24,11 @@ function TextForm({heading, mode, showAlert}) {
     setText(" ")
     showAlert("Text Deleted", "success")
   }
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text);
+    showAlert("Copied to Clipeboard", "success")
+  };
+
   const replaceText = () => {
     let a = prompt("What word do you want to replace?");
     if (text.includes(a)) {
@@ -49,8 +54,10 @@ function TextForm({heading, mode, showAlert}) {
 </div>
 <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
 <button className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>Convert to Lowercase</button>
+<button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>Copy the text</button>
 <button className="btn btn-danger mx-1 my-1" onClick={deleteText}>Delete the text</button>
 <button className="btn btn-danger mx-1 my-1" onClick={replaceText}>Replace the text</button>
+
     </div>
     <div className='conatiner my-4' style={{
     color: mode === 'light' ? 'black' : 'white'
