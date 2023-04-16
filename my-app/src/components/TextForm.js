@@ -47,17 +47,17 @@ function TextForm({heading, mode, showAlert}) {
     backgroundColor: mode === 'dark' ? '#343a40' : 'lightblue', color: mode === 'dark' ? 'white' : 'black'
   }}></textarea>
 </div>
-<button className="btn btn-primary mx-3" onClick={handleUpClick}>Convert to Uppercase</button>
-<button className="btn btn-primary" onClick={handleLowClick}>Convert to Lowercase</button>
-<button className="btn btn-danger mx-5" onClick={deleteText}>Delete the text</button>
-<button className="btn btn-danger" onClick={replaceText}>Replace the text</button>
+<button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+<button className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>Convert to Lowercase</button>
+<button className="btn btn-danger mx-1 my-1" onClick={deleteText}>Delete the text</button>
+<button className="btn btn-danger mx-1 my-1" onClick={replaceText}>Replace the text</button>
     </div>
     <div className='conatiner my-4' style={{
     color: mode === 'light' ? 'black' : 'white'
   }}>
       <h1>Your Text Summary</h1>
-      <p>Total {text.split(/\s+/).length-1} words and {text.length} characters.</p>
-      <p>{0.008 * (text.split(/\s+/).length-1)}minutes taken to read the word.</p>
+      <p>Total {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters.</p>
+      <p>{0.008 * (text.split(" ").filter((element)=>{return element.length!==0}).length)}minutes taken to read the word.</p>
     </div>
     <h2 style={{
     color: mode === 'light' ? 'black' : 'white'
