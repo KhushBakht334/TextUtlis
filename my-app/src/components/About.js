@@ -23,7 +23,7 @@ function About({mode}){
         <div className="accordion-body">"TextUtils" is a web application designed to help users gain insights into their written content. The app allows users to paste or type their text into the provided text box and perform a variety of text analysis functions such as word count, character count, and reading time estimation. The app also provides an option to convert the text to uppercase or lowercase and replace specific words or phrases within the text. This makes it easy for users to quickly identify key information within their content and make necessary changes. With its simple and intuitive interface, Analyze Your Text is a valuable tool for anyone looking to improve their writing skills, from students to professionals.</div>
         </div>
     </div>
-    <div className="accordion-item">
+    <div className="accordion-item" style={myStyle}>
         <h2 className="accordion-header">
         <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
            <strong>Free to Use</strong> 
