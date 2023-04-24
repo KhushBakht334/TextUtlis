@@ -23,7 +23,7 @@ function App() {
       setAlert(null);
     }, 1000);
   };
-
+//added a function
  const toggelCheck =()=>{
     if(mode === `light`){
     setMode(`dark`)
