@@ -64,7 +64,7 @@ function TextForm({heading, mode, showAlert}) {
   }}>
       <h1>Your Text Summary</h1>
       <p>Total {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters.</p>
-      <p>{0.008 * (text.split(/\s+/).filter((element)=>{return element.length!==0}).length)}minutes taken to thr read the word.</p>
+      <p>{0.008 * (text.split(/\s+/).filter((element)=>{return element.length!==0}).length)}minutes taken to read the word.</p>
     </div>
     <h2 style={{
     color: mode === 'light' ? 'black' : 'white'
