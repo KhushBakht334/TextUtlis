@@ -75,7 +75,6 @@ function TextForm({heading, mode, showAlert}) {
     </>
   );
 }
-//adding default
 TextForm.defaultProps = {
   mode: 'light'
 };
